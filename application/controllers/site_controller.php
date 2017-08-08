@@ -41,22 +41,25 @@ class Site_controller extends CI_Controller{
         $this->load->library('form_validation');
         $this->load->model('auth_utilisateur_model');
 
-        $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|required|xss_clean');    
-        $this->form_validation->set_rules('mdp', 'Mot de passe', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|required');    
+        $this->form_validation->set_rules('mdp', 'Mot de passe', 'trim|required');
         
+//        var_dump($this->form_validation->run());
         if($this->form_validation->run()){            
             
             $pseudo = $this->input->post('pseudo');
             $mdp = $this->input->post('mdp');
             
-            var_dump($this->auth_utilisateur_model->login($pseudo, $mdp));
+          
             if($this->auth_utilisateur_model->login($pseudo, $mdp)){
-                redirect('home_view');
+                $data = $this->auth_utilisateur_model->testformm($pseudo);
+                
+                $this->load->view('home_view',$data);
+                $this->load->view('fin_view');
             }
         }else{
             $this->load->view('debut_view');
             $this->load->view('accueil_view');
-            echo 'encore raté !!';
             $this->load->view('fin_view');
             
         }

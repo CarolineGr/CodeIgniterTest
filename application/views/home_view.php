@@ -40,9 +40,8 @@
                         <li><a href="<?php echo base_url(). index_page()?>/site_controller">Accueil</a></li>
                     </ul>
                     <div class="row ">
-                        <?php foreach($records as $r): ?>
-                        <h4 style="color: white" class="text-right">Bonjour <?php echo $r->prenom . $r->nom; ?>, <a href="<?php base_url().index_page() ?>/site_controller/deconnexion">Se déconnecter</a> </h4>
-                        <?php endforeach; ?>
+                        <h4 style="color: white" class="text-right">Bonjour <?php echo $user->prenom . " ". $user->nom; ?>, <a href="<?php echo base_url(). index_page() ?>/site_controller/deconnexion"> Se déconnecter</a> </h4>
+                        
                     </div>
                    
                 </div>
@@ -57,23 +56,3 @@
         
         
         
-        
-        <!--pied de page-->
-        <div class="container">
-            <hr>
-            <footer>
-                <p>&copy; Caroline Grimault 2017</p>
-            </footer>
-        </div>    
-
-        <script src="<?php echo base_url()?>javascript/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="<?php echo base_url()?>javascript/bootstrap.min.js"></script>
-        
-        
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-       
-    </body>
-    
-</html>

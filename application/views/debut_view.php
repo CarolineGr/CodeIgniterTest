@@ -32,25 +32,34 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo base_url(). index_page()?>site_controller/">L'ACCORDEUR TEST</a>
+                    <a class="navbar-brand" href="<?php echo base_url(). index_page()?>/site_controller/">L'ACCORDEUR TEST</a>
                 </div>
                 <div class="collapse navbar-collapse right" id="main-nav">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?php echo base_url(). index_page()?>site_controller/">Accueil</a></li>
-                        <li><a href="<?php echo base_url(). index_page()?>site_controller/testbdd/">Test connexion bdd</a></li>
+                        <li><a href="<?php echo base_url(). index_page()?>/site_controller/">Accueil</a></li>
+                        <li><a href="<?php echo base_url(). index_page()?>/site_controller/testbdd/">Test connexion bdd</a></li>
                     </ul>
+                    <?php echo validation_errors(); ?>
                     <?php echo form_open('site_controller/authentification'); ?>
                         
-                        <label for="pseudo">Pseudo :</label>
+                        <label for="pseudo">Pseudo</label>
                         <input type="text" id="pseudo" name="pseudo" style="color: black">
 
-                        <label for="mdp">Mot de passe :</label>
+                        <label for="mdp">Mot de passe</label>
                         <input type="password" id="mdp" name="mdp" style="color: black">
 
                         <input type="submit" name="submit" value="Connexion" style="color: black">
                         
-                    </form>
+                    <?php echo form_close(); ?>
                 </div>
-                
             </div>
         </nav>
+      
+        <div class="row">
+            <?php echo form_open('site_controller/testform'); ?>
+            <label for="pseudo">Pseudo :</label>
+                <input type="text" id="pseudo" name="pseudo" style="color: black">
+
+                <input type="submit" name="submit" value="Essayer" style="color: black">
+            <?php echo form_close(); ?>
+        </div>

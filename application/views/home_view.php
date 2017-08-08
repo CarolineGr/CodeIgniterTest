@@ -33,15 +33,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo base_url(). index_page()?>site_controller">L'ACCORDEUR TEST</a>
+                    <a class="navbar-brand" href="<?php echo base_url(). index_page()?>/site_controller">L'ACCORDEUR TEST</a>
                 </div>
                 <div class="collapse navbar-collapse right" id="main-nav">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?php echo base_url(). index_page()?>site_controller">Accueil</a></li>
+                        <li><a href="<?php echo base_url(). index_page()?>/site_controller">Accueil</a></li>
                     </ul>
                     <div class="row ">
                         <?php foreach($records as $r): ?>
-                        <h4 style="color: white" class="text-right">Bonjour <?php echo $r->prenom . $r->nom; ?>, <a href="<?php base_url().index_page() ?>site_controller/deconnexion">Se déconnecter</a> </h4>
+                        <h4 style="color: white" class="text-right">Bonjour <?php echo $r->prenom . $r->nom; ?>, <a href="<?php base_url().index_page() ?>/site_controller/deconnexion">Se déconnecter</a> </h4>
                         <?php endforeach; ?>
                     </div>
                    

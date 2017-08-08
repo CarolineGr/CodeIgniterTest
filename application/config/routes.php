@@ -54,4 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-//$route['site_controleur'] = 
+//$route['site'] = 'index.php/site_controller';

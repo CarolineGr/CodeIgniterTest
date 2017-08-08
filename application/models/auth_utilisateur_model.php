@@ -7,7 +7,7 @@ class Auth_utilisateur_model extends CI_Model{
     protected $_id;
     protected $_nom;
     protected $_pseudo;
-    
+  
     
 
     public function __construct() {
@@ -18,6 +18,11 @@ class Auth_utilisateur_model extends CI_Model{
     public function testbddm() {
         $query = $this->db->get('utilisateurs');
         $data['records'] = $query->result();
+        return $data;
+    }
+    
+    public function testformm($pseudo) {
+        $data['user'] = $this->load_utilisateur($pseudo);
         return $data;
     }
     
@@ -67,10 +72,10 @@ class Auth_utilisateur_model extends CI_Model{
     protected function load_utilisateur($pseudo) {
         return $this->db
                     ->select('*')
-                    ->from($table)
+                    ->from('utilisateurs')
                     ->where('pseudo',$pseudo)
                     ->get()
-                    ->first_row();
+                    ->first_row();                    
     }
     
     public function login($pseudo,$mdp) {

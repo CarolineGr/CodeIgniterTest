@@ -32,11 +32,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo base_url() . index_page()?>site_controller/">L'ACCORDEUR TEST</a>
+                    <a class="navbar-brand" href="<?php echo base_url() . index_page()?>/site_controller/">L'ACCORDEUR TEST</a>
                 </div>
                 <div class="collapse navbar-collapse right" id="main-nav">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?php echo base_url(). index_page()?>site_controller/">Accueil</a></li>
+                        <li><a href="<?php echo base_url(). index_page()?>/site_controller/">Accueil</a></li>
                     </ul>
                     <div class="row center-block">
                         <?php foreach($records as $r): ?>

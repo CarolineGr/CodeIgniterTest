@@ -20,8 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index() {
             
-            redirect('site_controller');
-
             $this->load->view('welcome_message');
 	}
 }

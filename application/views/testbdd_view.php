@@ -49,14 +49,12 @@
             </div>
         </nav>
         
-        <div class="row">
-            <div class="center-block">
-                <?php foreach($records as $r){
-                    echo $r->id .'<br>';
-                    echo $r->nom .'<br>';
-                    echo $r->prenom .'<br>';
-                    echo $r->pseudo .'<br>';
-                }
-                ?>
-            </div>
-        </div>
+        
+        <?php foreach($records as $r){
+            echo $r->id .'<br>';
+            echo $r->nom .'<br>';
+            echo $r->prenom .'<br>';
+            echo $r->pseudo .'<br>';
+        }
+        ?>
+    

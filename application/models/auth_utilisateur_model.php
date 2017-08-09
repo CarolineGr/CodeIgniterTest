@@ -9,7 +9,6 @@ class Auth_utilisateur_model extends CI_Model{
     protected $_pseudo;
   
     
-
     public function __construct() {
         parent::__construct();
         $this->load_from_session();

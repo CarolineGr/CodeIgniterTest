@@ -55,3 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 //$route['site'] = 'index.php/site_controller';
+//$route['site/authentification'] = 'index.php/site_controller/authentification';
+//$route['site/testbdd'] = 'index.php/site_controller/testbdd';
+

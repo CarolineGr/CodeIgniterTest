@@ -39,27 +39,20 @@
                         <li><a href="<?php echo base_url(). index_page()?>/site_controller/">Accueil</a></li>
                         <li><a href="<?php echo base_url(). index_page()?>/site_controller/testbdd/">Test connexion bdd</a></li>
                     </ul>
-                    <?php echo validation_errors(); ?>
+                    
                     <?php echo form_open('site_controller/authentification'); ?>
-                        
+
                         <label for="pseudo">Pseudo</label>
                         <input type="text" id="pseudo" name="pseudo" style="color: black">
-
+                        <?php echo form_error('pseudo', '<p class="error col-md-12">', '</p>'); ?>
+                        
                         <label for="mdp">Mot de passe</label>
                         <input type="password" id="mdp" name="mdp" style="color: black">
+                        <?php echo form_error('mdp', '<p class="error col-md-12">', '</p>'); ?>
 
                         <input type="submit" name="submit" value="Connexion" style="color: black">
-                        
+
                     <?php echo form_close(); ?>
                 </div>
             </div>
         </nav>
-      
-        <div class="row">
-            <?php echo form_open('site_controller/testform'); ?>
-            <label for="pseudo">Pseudo :</label>
-                <input type="text" id="pseudo" name="pseudo" style="color: black">
-
-                <input type="submit" name="submit" value="Essayer" style="color: black">
-            <?php echo form_close(); ?>
-        </div>

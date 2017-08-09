@@ -25,18 +25,17 @@ class Site_controller extends CI_Controller{
         $this->load->view('testbdd_view',$data);
     }
     
-    public function testform() {
-        $this->load->model('auth_utilisateur_model');
-        
-        $pseudo = $this->input->post('pseudo');
-        var_dump($pseudo);
-        $data = $this->auth_utilisateur_model->testformm($pseudo);
-        var_dump($data);
-        $this->load->view('testform_view',$data);
-    }
+//    public function testform() {
+//        $this->load->model('auth_utilisateur_model');
+//        
+//        $pseudo = $this->input->post('pseudo');
+//        var_dump($pseudo);
+//        $data = $this->auth_utilisateur_model->testformm($pseudo);
+//        var_dump($data);
+//        $this->load->view('testform_view',$data);
+//    }
     
-    public function authentification() {
-        
+    public function authentification() {        
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('auth_utilisateur_model');
@@ -44,7 +43,6 @@ class Site_controller extends CI_Controller{
         $this->form_validation->set_rules('pseudo', 'Pseudo', 'trim|required');    
         $this->form_validation->set_rules('mdp', 'Mot de passe', 'trim|required');
         
-//        var_dump($this->form_validation->run());
         if($this->form_validation->run()){            
             
             $pseudo = $this->input->post('pseudo');
@@ -56,6 +54,10 @@ class Site_controller extends CI_Controller{
                 
                 $this->load->view('home_view',$data);
                 $this->load->view('fin_view');
+            }else{
+            $this->load->view('debut_erreur_view');
+            $this->load->view('accueil_view');
+            $this->load->view('fin_view');
             }
         }else{
             $this->load->view('debut_view');
@@ -70,8 +72,6 @@ class Site_controller extends CI_Controller{
         
         $this->auth_utilisateur_model->logout();
         
-        $this->load->view('debut_view');
-        $this->load->view('accueil_view');
-        $this->load->view('fin_view');
+        redirect('site_controller');
     }
 }
